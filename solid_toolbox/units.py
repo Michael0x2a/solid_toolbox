@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
+
 from typing import NamedTuple
+
 
 class Vec(NamedTuple):
     x: float
@@ -11,6 +14,7 @@ class Vec(NamedTuple):
     def __str__(self):
         return self.__repr__()
 
+
 class Vec2d(NamedTuple):
     x: float
     y: float
@@ -20,6 +24,7 @@ class Vec2d(NamedTuple):
 
     def __str__(self):
         return self.__repr__()
+
 
 Point = Vec
 Point2d = Vec2d

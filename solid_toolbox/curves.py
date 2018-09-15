@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from solid_toolbox.units import Point2d
 
 _pascal_triangle = [
@@ -7,8 +9,10 @@ _pascal_triangle = [
     [1, 3, 3, 1],
 ]
 
+
 def inclusive_range(start, end):
     return range(start, end + 1)
+
 
 def binomial(n, k):
     # Expand cache
@@ -22,6 +26,7 @@ def binomial(n, k):
         next_row[s] = 1
         _pascal_triangle.append(next_row)
     return _pascal_triangle[n][k]
+
 
 def bezier_curve(control_points, num_samples):
     def bezier(t):

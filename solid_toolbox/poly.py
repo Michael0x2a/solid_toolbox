@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+
 from solid import *
 from solid.utils import *
+
 
 def construct_polyhedron(faces):
     points = []
@@ -17,6 +20,7 @@ def construct_polyhedron(faces):
             translated_face.append(unique_points[point])
         translated_faces.append(translated_face)
     return polyhedron(points=points, faces=translated_faces, convexity=10)
+
 
 def construct_polygon(*paths):
     unique_points = {}
