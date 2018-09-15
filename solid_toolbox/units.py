@@ -1,3 +1,5 @@
+from typing import NamedTuple
+
 class Vec(NamedTuple):
     x: float
     y: float

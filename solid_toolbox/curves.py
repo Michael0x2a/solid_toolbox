@@ -1,5 +1,12 @@
 from solid_toolbox.units import Point2d
 
+_pascal_triangle = [
+    [1],
+    [1, 1],
+    [1, 2, 1],
+    [1, 3, 3, 1],
+]
+
 def inclusive_range(start, end):
     return range(start, end + 1)
 
@@ -7,7 +14,7 @@ def binomial(n, k):
     # Expand cache
     while n >= len(_pascal_triangle):
         s = len(_pascal_triangle)
-        prev_row[s - 1]
+        prev_row = _pascal_triangle[s - 1]
         next_row = [0 for _ in range(s + 1)]
         next_row[0] = 1
         for i in range(1, s):

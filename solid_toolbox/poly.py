@@ -1,5 +1,5 @@
-from solidpython import *
-from solidpython.utils import *
+from solid import *
+from solid.utils import *
 
 def construct_polyhedron(faces):
     points = []
