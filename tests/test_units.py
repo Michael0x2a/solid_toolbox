@@ -54,3 +54,12 @@ def test_bad_add():
 def test_type_preservation():
     assert type(Vec(1, 2, 3) + Vec(4, 5, 6)) == Vec
     assert type(Vec2d(1, 2) + Vec2d(4, 5)) == Vec2d
+
+
+def test_hashing():
+    assert hash(Vec(1, 2, 3)) == hash(Vec(1, 2, 3))
+    assert hash(Vec(1, 2, 3)) != hash(Vec(3, 2, 1))
+    assert hash(Vec2d(1, 2)) == hash(Vec2d(1, 2))
+    assert hash(Vec2d(1, 2)) != hash(Vec2d(2, 1))
+    assert hash(Vec2d(1, 2)) != hash(Vec(1, 2, 0))
+

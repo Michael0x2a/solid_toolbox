@@ -29,7 +29,7 @@ class Vector:
         else:
             return False
 
-    def __hash__(self, other):
+    def __hash__(self):
         return hash(self._items)
 
     def elem_op(self, op, other, allow_scalar=False):
