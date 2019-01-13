@@ -5,7 +5,7 @@ import click
 
 
 class FolderType(click.ParamType):
-    name = 'Folder'
+    name = "Folder"
 
     def __init__(self):
         self.converter = click.Path(
@@ -28,20 +28,19 @@ def run():
 
 
 @run.command()
-@click.argument('project_path',
-                type=FolderType())
+@click.argument("project_path", type=FolderType())
 def new(project_path):
     """Generates a new project located at the given path"""
     name = project_path.name
-    generate_out_path = project_path / 'generated'
-    model_generator_path = project_path / f'{name}.py'
+    generate_out_path = project_path / "generated"
+    model_generator_path = project_path / f"{name}.py"
 
     project_path.mkdir(parents=True, exist_ok=True)
     generate_out_path.mkdir(parents=True, exist_ok=True)
     model_generator_path.write_text(TEMPLATE.format(name=name))
 
 
-TEMPLATE = '''#!/usr/bin/env python3
+TEMPLATE = """#!/usr/bin/env python3
 
 from solid import *
 from solid.utils import *
@@ -61,4 +60,4 @@ if __name__ == '__main__':
         'generated/{name}.scad',
         include_orig_code=False,
     )
-'''
+"""

@@ -34,7 +34,4 @@ def construct_polygon(*paths):
                 points_listing.append(point)
             point_indices.append(unique_points[point])
         path_indices.append(point_indices)
-    return polygon(
-        points=points_listing,
-        paths=path_indices,
-    )
+    return polygon(points=points_listing, paths=path_indices)

@@ -2,12 +2,7 @@
 
 from solid_toolbox.units import Point2d
 
-_pascal_triangle = [
-    [1],
-    [1, 1],
-    [1, 2, 1],
-    [1, 3, 3, 1],
-]
+_pascal_triangle = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
 
 
 def inclusive_range(start, end):
@@ -30,12 +25,10 @@ def binomial(n, k):
 
 def bezier_curve(control_points, num_samples):
     def bezier(t):
-        x_final = 0
-        y_final = 0
+        output = Point2d(0, 0)
         n = len(control_points) - 1
         for k, point in enumerate(control_points):
-            fraction = binomial(n, k) * (1 - t)**(n - k) * t**k
-            x_final += point.x * fraction
-            y_final += point.y * fraction
-        return Point2d(x_final, y_final)
+            output += point * binomial(n, k) * (1 - t) ** (n - k) * t ** k
+        return output
+
     return [bezier(i / (num_samples - 1)) for i in range(num_samples)]
