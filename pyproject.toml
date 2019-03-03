@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "solid_toolbox"
-version = "0.0.4"
+version = "0.0.5"
 description = "A collection of utilities for solidpython"
 
 license = "MIT"
