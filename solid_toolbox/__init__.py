@@ -2,6 +2,7 @@ from solid_toolbox.units import *
 from solid_toolbox.transforms import *
 from solid_toolbox.poly import *
 from solid_toolbox.curves import *
+from solid_toolbox.extrusion import *
 
 __all__ = [
     # From 'units'
@@ -26,4 +27,6 @@ __all__ = [
     # From curves
     "inclusive_range",
     "bezier_curve",
+    # From extrusion
+    "extrude_with_offsets",
 ]

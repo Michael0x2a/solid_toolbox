@@ -62,4 +62,3 @@ def test_hashing():
     assert hash(Vec2d(1, 2)) == hash(Vec2d(1, 2))
     assert hash(Vec2d(1, 2)) != hash(Vec2d(2, 1))
     assert hash(Vec2d(1, 2)) != hash(Vec(1, 2, 0))
-
